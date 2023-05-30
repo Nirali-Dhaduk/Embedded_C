@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-int main(){
-    struct subject{
+struct subject{
         char name[32];
         int credit;
         char level;
     }s1;
+int main(){
+    
    strcpy(s1.name,"maths");
     s1.credit = 5;
     s1.level = 'A';

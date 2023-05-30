@@ -1,2 +1,1 @@
-free(ptr1);
-// free(ptr2);
+    print(s.grade,s.marks);

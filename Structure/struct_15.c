@@ -1,54 +1,61 @@
-
-
-/****************************************************
- DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-                   Version 2, December 2020
- 
-Copyright (C) 2021 Mahendra Sondagar <mahendrasondagar08@gmail.com>
-
-Everyone is permitted to copy and distribute verbatim or modified
-copies of this license document, and changing it is allowed as long
-as the name is changed.
- 
-           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
- 0. You just DO WHAT THE FUCK YOU WANT TO.
- 
- Coded: Sun, 11th July 2021 / 18.48 PM 
- ****************************************************/
- 
 #include <stdio.h>
-#include <stdint.h>
-
-typedef struct 
+struct student
 {
-  uint8_t cmd;
-  char *response;
-  uint32_t timeout;
-}MySensor;
-
-
-void Send_Sensor(MySensor Sensor_opt[])
+    char firstname[64];
+    char lastname[64];
+    int id;
+    int score;
+};
+struct student stdArr[3];
+void displayDetail(struct student std)
 {
-  for(uint8_t i=0; i<3; i++)
-  {
-     printf("Command= %02x, response=%s, timeout=%d\r\n", Sensor_opt[i].cmd, Sensor_opt[i].response,Sensor_opt[i].timeout);
-  }
-}
+    printf("Firstname: %s\n", std.firstname);
+    printf("Lastname: %s\n", std.lastname);
+    printf("ID: %d\n", std.id);
+    printf("Score: %d\n", std.score);
+};
+void check(int id){
+    for(int j = 0 ; j<3 ; j++){
+        if(id == stdArr[j].id){
+            printf("\nFirst name = %s",stdArr[j].firstname);
+            printf("\nLast name = %s",stdArr[j].lastname);
+            printf("\nStudent score = %d",stdArr[j].score);
+        } 
+    }
+};
 
-int main(void )
+int main(void)
 {
-    printf("Passing the structure array to the function arguments...\r\n");
-    /* Declaring the array of the structure object */
-    /*Designated structure object */
-    MySensor Sensor_obj[3] ={
-                               {.cmd= 0x53, .response= "OK", .timeout= 1000},
-                               {.cmd= 0x10, .response= "OK", .timeout= 1000},
-                               {.cmd= 0x08, .response= "OK", .timeout= 1000}
-                            };
+    int i;
+
+    for (i = 0; i < 3; i++)
+    {
+        printf("Enter detail of student #%d\n", (i + 1));
+
+        printf("\nEnter First Name: ");
+        scanf("%s", stdArr[i].firstname);
+
+        printf("\nEnter Last Name: ");
+        scanf("%s", stdArr[i].lastname);
+
+        printf("\nEnter ID: ");
+        scanf("%d", &stdArr[i].id);
+
+        printf("\nEnter Score: ");
+        scanf("%d", &stdArr[i].score);
+    }
+
+    for (i = 0; i < 3; i++)
+    {
+        printf("\nStudent #%d Detail:\n", (i + 1));
+        displayDetail(stdArr[i]);
+    }
+    printf("\nEnter the student id ");
+    scanf("%d", &stdArr[i].id);
     
-    /* passing the structure array to the function argment*/
-    Send_Sensor(Sensor_obj);
+    int id = stdArr[i].id;
+    printf("\nYou enter  = %d",id);
+
+    check(id);
     return 0;
 }

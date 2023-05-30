@@ -1,10 +1,11 @@
 #include <stdio.h>
-int main(){
-  typedef  struct student{
+typedef  struct student{
         char name[20];
         int age;
         int marks;
     }s;
+int main(){
+
         s c[2];
     int i;
     for(i=0;i<2;i++){

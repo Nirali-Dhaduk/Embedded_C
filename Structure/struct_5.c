@@ -1,9 +1,10 @@
 #include <stdio.h>
-int main(){
-    struct abc{
+ struct abc{
         int a;
         int b;
     };
+int main(){
+   
     struct abc *ptr;
     printf("Enter two numbers:");
 scanf("%d %d",&ptr->a,&ptr->b);
