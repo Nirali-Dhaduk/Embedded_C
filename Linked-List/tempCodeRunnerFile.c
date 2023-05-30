@@ -1,1 +1,1 @@
-30);
+head = insertAtIndex(head,6,1);
