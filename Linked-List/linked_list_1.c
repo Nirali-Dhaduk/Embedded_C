@@ -5,6 +5,7 @@ struct node{
     int data;
     struct node *next;
 };
+//traversing the node
 void traversal(struct node *ptr){
     while (ptr != NULL)
     {

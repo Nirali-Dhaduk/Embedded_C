@@ -1,1 +1,2 @@
-fun();
+  // printf("%d",n);
+    // printf("\n");

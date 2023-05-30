@@ -1,4 +1,4 @@
-//insertion at index...
+//insertion at specific index
 #include <stdio.h>
 #include <stdlib.h>
 struct node{

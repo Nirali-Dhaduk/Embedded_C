@@ -16,7 +16,7 @@ struct node* insertAtFirst(struct node *head,int data){
    struct node* ptr = (struct node*)malloc(sizeof(struct node));
 
    ptr->next = head;
-   ptr-> data = 0;
+   ptr-> data = data;
    return ptr;
 
 }
@@ -47,7 +47,7 @@ second->next = third;
 third ->data = 30;
 third->next = NULL;
 traversal(head);
-head = insertAtFirst(head,0);
+head = insertAtFirst(head,90);
 printf("\n");
 printf("After insertion:\n");
 traversal(head);
